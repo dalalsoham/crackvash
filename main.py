@@ -6,4 +6,5 @@ target = ChangePassword(p,r)
 
 target.req_otp()
 target.crack_otp()
-target.changePass("Doha123456")
+NewPassword = input("Type a new password:")
+target.changePass(str(NewPassword))

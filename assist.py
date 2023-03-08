@@ -58,7 +58,7 @@ class ChangePassword:
             print(pass_res)
 
 
-#https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber?__RequestVerificationToken=sl9KQLE6eeNfrdaRZrh1dAjpD0-hA0chPyiDrEyyN8ViRuu66_YzFbM7Wb6HxRrpJXkEAe3SJ2nF1ipOlKcz8eAzYK36E6b-z7iB2tnnkhU1&mobileNumber=8801756750513&nickName=Doha
+
 class getRegNumber:
     def __init__(self,phone,nickName):
         self.phoneNumber = phone

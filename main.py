@@ -13,10 +13,10 @@ Defult is 1
 choise = int(input("(1/2)"))
 phone = input("PhoneNumber(example:88017********):")
 if choise==1:
-    nickname = input("Type nickname(case sensitive)")
+    nickname = input("Type nickname(case sensitive):")
     target = getRegNumber(phone,nickname)
-    target.req_otp
-    target.crack_otp
+    target.req_otp()
+    target.crack_otp()
 elif choise==2:
     registration = input("Registration number:")
     target = ChangePassword(phone, registration)

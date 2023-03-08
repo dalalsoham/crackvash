@@ -1,7 +1,13 @@
 # crackvash
-A simple tool to attack the poorly configured authentication system of udvash.com. 
+A simple tool that can exploit the poorly configured authentication system of udvash.com. 
 
-In future I am also gonna ad a functionality that can take over accounts with just someone's nickname and phone number.
+It can retrieve registration number from Nickname and phone number;
+or, Change password of any account with phone number and registration.
+
+The OTP sent to the phone number is only 4 digits. So, if we use a little bit of permutation, there is only 10000 possible combination.
+This tool tries them all! And eventually crack it.
+
+I built it out of boredom!
 
 Warning: Don't use this to commit any crime, I'll not be responsible for any of your bad acts.
-I just hope the good folks form Udvash sees this and fix the bug! 
+I just hope the folks from Udvash finds this tool and fix the bug! 

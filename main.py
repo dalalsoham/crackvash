@@ -6,10 +6,10 @@ what do want?
                       Or,
 2) Change pasword using Phone Number & Registration number
 
-Defult is 1
+
 
 """)
-choise = 1
+
 choise = int(input("(1/2): "))
 phone = input("PhoneNumber(example:88017********): ")
 if choise==1:

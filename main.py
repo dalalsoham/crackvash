@@ -10,7 +10,7 @@ Defult is 1
 
 """)
 
-choise = input("(1/2)")
+choise = int(input("(1/2)"))
 phone = input("PhoneNumber(example:88017********):")
 if choise==1:
     nickname = input("Type nickname(case sensitive)")

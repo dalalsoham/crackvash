@@ -1,10 +1,29 @@
-from assist import ChangePassword
+from assist import ChangePassword, getRegNumber
 
-p = input("PhoneNumber(example:88017********):")
-r= input("RegistrationNumber:")
-target = ChangePassword(p,r)
+print("""
+what do want?
+1) Get registration number from Nickname & Phone Number
+                      Or,
+2) Change pasword using Phone Number & Registration number
 
-target.req_otp()
-target.crack_otp()
-NewPassword = input("Type a new password:")
-target.changePass(str(NewPassword))
+Defult is 1
+
+""")
+
+choise = input("(1/2)")
+phone = input("PhoneNumber(example:88017********):")
+if choise==1:
+    nickname = input("Type nickname(case sensitive)")
+    target = getRegNumber(phone,nickname)
+    target.req_otp
+    target.crack_otp
+elif choise==2:
+    registration = input("Registration number:")
+    target = ChangePassword(phone, registration)
+    target.req_otp()
+    target.crack_otp()
+    NewPassword = input("Type a new password (atleast 6 charecters long):")
+    target.changePass(NewPassword)
+else:
+    print("Invalid input")
+    exit()

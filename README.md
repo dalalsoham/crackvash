@@ -1,14 +1,60 @@
-# crackvash
-A simple tool that can exploit the poorly configured authentication system of udvash.com. 
 
-It can retrieve registration number from Nickname and phone number;
-or, Change password of any account with phone number and registration.
+# Crackvash
 
-The OTP sent to the phone number is only 4 digits. So, if we use a little bit of permutation, there is only 10000 possible combination.
-This tool tries them all! And eventually crack it within 5 minutes or even shorter if you have a decent internet connection.
-Possible metigations: Longer OTP, Limit clients after a certain amount wrong OTP attempt.
+It's a tool that lets you hack into udvash accounts. 
 
-I built it out of boredom!
 
-Warning: Don't use this to commit any crime, I'll not be responsible for any of your bad acts.
-I just hope the folks from Udvash finds this tool and fix the bug! 
+
+## warning:
+
+This is a POC (Proof Of Concept) script. I found the voulnaribility and I made a tool that can exploit it, just to proove a point. I you use it with ill intent, well; you are on your own. I will not be responsible for what you do.
+
+
+## Contributing
+
+Contributions are always welcome!
+
+If you want to customize this code, just do it.
+some things I'd like to change are:
+1. Build a better Command Line Interface.
+2. Verify the cridentials provided by the user before starting and attack.
+
+## Features
+
+- Change Password
+- Get registration number by name and phone number
+- Multi threading support
+- Randomized OTP brute-forcing
+
+
+## Installation and Usage
+
+You have to install the required modules before runnig it. Just run the follwing commands:
+
+- clone the repository:
+```bash
+    git clone https://github.com/itsmmdoha/crackvash
+```
+
+- navigate to the crackvash directory:
+```bash
+    cd crackvash
+```
+
+- install required modules:
+```bash
+  pip install -r requirements.txt
+```
+- finally run the main.py file
+```bash
+    python3 main.py
+```
+- Then, just follow the onscreen instruction.
+
+    
+## How does it work?
+
+The web portal sends a 4 digit OTP to the user, this tool just cracks it trying all 10 thousand combinations. 
+It first loads all the combinations from the 4digits.txt file and randomize it. After that, it loads all the combinations to a queue so that multi threading can be used. Then It just tries all of them untill one is matched.
+
+Then brute-force can take 20 seconds if you are lucky or can also extend upto 3-4 minutes. But if you have a fast internet connection, I promise it wont take much longer than that.

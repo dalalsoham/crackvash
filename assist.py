@@ -27,8 +27,6 @@ class ChangePassword:
     def req_otp(self):
         req_url = f"{url}?{token}&registrationNumber={self.registrationNumber}&mobileNumber={self.PhoneNumber}"
         session.get(req_url)
-        #print(req_url)
-        print("OTP sent!")
 
 
     def tryOTP(self,otp):
@@ -36,7 +34,6 @@ class ChangePassword:
         data["mobileNumber"] = self.PhoneNumber
         otp_url = "https://online.udvash-unmesh.com/Account/ForgotPassword"
         data["otp"] = otp
-        print(otp)
         otp_res = session.post(otp_url,data=data)
         if "Password length must be greater than or equal to 6" in otp_res.text:
             self.wrongOTP = False
@@ -49,8 +46,7 @@ class ChangePassword:
         data["ConfirmPassword"]=password
         pass_res = session.post("https://online.udvash-unmesh.com/Account/SetNewPassword",data=data)
         if "CONGRATULATIONS!" in pass_res.text:
-            print("password changed")
-            print("New password:",password)
+            print("password changed!")
         else:
             print(pass_res)
 
@@ -66,14 +62,12 @@ class getRegNumber:
     def req_otp(self):
         otp_url = f"https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber?{token}&mobileNumber={self.phoneNumber}&nickName={self.nickName}"
         session.get(otp_url)
-        print("OTP sent!")
     
     def tryOTP(self,otp):
         data["nickName"] = self.nickName
         data["mobileNumber"] = self.phoneNumber
         otp_url = "https://online.udvash-unmesh.com/Account/ForgotRegistrationNumber"
         data["otp"] = otp
-        print(otp)
         otp_res = session.post(otp_url,data = data)
         if "Your registration number" in otp_res.text:
             self.wrongOTP = False

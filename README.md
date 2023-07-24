@@ -38,7 +38,7 @@ You have to install the required modules before running it. Just run the followi
 - Clone the repository:
 ```bash
     git clone https://github.com/itsmmdoha/crackvash
-
+```
 
 - navigate to the crackvash directory:
 ```bash

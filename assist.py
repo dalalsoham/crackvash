@@ -46,7 +46,7 @@ class ChangePassword:
         data["ConfirmPassword"]=password
         pass_res = session.post("https://online.udvash-unmesh.com/Account/SetNewPassword",data=data)
         if "CONGRATULATIONS!" in pass_res.text:
-            print("password changed!")
+            return "Password was successfully changed!"
         else:
             print(pass_res)
 

@@ -62,5 +62,3 @@ The web portal sends a 4-digit OTP to the user; this tool cracks it by trying al
 It first loads all the combinations from the 4digits.txt file and randomizes it. After that, it loads all the combinations into a queue so that multi-threading can be used. Then, it just tries all of them until one is matched.
 
 The brute-force can take 20 seconds if you are lucky or can also extend up to 2-3 minutes. But if you have a fast internet connection, I promise it won't take much longer than that.
-
-Then brute-force can take 20 seconds if you are lucky or can also extend upto 3-4 minutes. But if you have a fast internet connection, I promise it wont take much longer than that.

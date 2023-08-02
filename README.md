@@ -1,7 +1,7 @@
 # Crackvash
 ![intro img](https://github.com/Itsmmdoha/crackvash/blob/af6678a912ac96dfa9173d5eeb6d12378d88a20d/crackvash.png?raw=true)
 
-It's a tool that lets you hack into Udvash accounts.
+It's a python tool that lets you hack into Udvash accounts. It allows users to hack into Udvash accounts using OTP brute-force attack. It uses multi threading. So, the process is quick, takes no more than 2-3 minutes with decent internet connection.
 
 
 
@@ -62,3 +62,9 @@ The web portal sends a 4-digit OTP to the user; this tool cracks it by trying al
 It first loads all the combinations from the 4digits.txt file and randomizes it. After that, it loads all the combinations into a queue so that multi-threading can be used. Then, it just tries all of them until one is matched.
 
 The brute-force can take 20 seconds if you are lucky or can also extend up to 2-3 minutes. But if you have a fast internet connection, I promise it won't take much longer than that.
+
+## 🚀 About Me
+I'm an enthusiast.
+I have a youtube channel named [HoundSec](https://youtube.com/@HoundSec)
+
+contact me at: the_doha@protonmail.com

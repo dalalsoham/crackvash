@@ -60,7 +60,7 @@ elif choice==2:
         executor.submit(crack)
     while target.wrongOTP:
         sleep(1)
-    print(target.changePass(NewPassword))
+    print("\n"+target.changePass(NewPassword))
 else:
     print("Invalid input")
     exit()

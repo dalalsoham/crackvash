@@ -5,7 +5,26 @@ from concurrent.futures import ThreadPoolExecutor as TPE
 from queue import Queue as Q
 from sys import stdout
 
-print("\033[93m initializing...\033[0m")
+def banner():
+    #generated banner from https://patorjk.com/software/taag/#p=display&f=ANSI%20Regular&t=ckvash%0A
+    #font was ANSI Regular
+    banner = """
+     ██████ ██████   █████   ██████ ██   ██ ██    ██  █████  ███████ ██   ██ 
+    ██      ██   ██ ██   ██ ██      ██  ██  ██    ██ ██   ██ ██      ██   ██ 
+    ██      ██████  ███████ ██      █████   ██    ██ ███████ ███████ ███████ 
+    ██      ██   ██ ██   ██ ██      ██  ██   ██  ██  ██   ██      ██ ██   ██ 
+     ██████ ██   ██ ██   ██  ██████ ██   ██   ████   ██   ██ ███████ ██   ██ 
+                                                                             
+                                                                             
+                                                   by itsmmdoha aka HoundSec
+    """
+    print(f"\033[92;1m{banner}")
+
+banner()
+
+
+
+print("\033[93minitializing...\033[0m")
 NumberOfThreads = 5
 q = Q()
 with open("4digits.txt") as f:

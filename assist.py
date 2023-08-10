@@ -8,7 +8,7 @@ url = "https://online.udvash-unmesh.com/Account/ForgotPassword"
 try:
     res = session.get(url)
 except:
-    print("You are living under a rock, move out and get an internet connection.")
+    print("\033[93m You are living under a rock, move out and get an internet connection. \033[0m")
     exit()
 cookie = res.headers["set-cookie"]
 index = cookie.index(";") 

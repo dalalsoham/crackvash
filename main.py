@@ -19,9 +19,9 @@ with open("4digits.txt") as f:
 print("""\033[93m
 what do you want?
 
-1) \033[96m Get registration number from Nickname & Phone Number
+1)\033[96m Get registration number from Nickname & Phone Number
  \033[93m                     Or,
-2) \033[96m Change pasword using Phone Number & Registration number
+2)\033[96m Change pasword using Phone Number & Registration number
 
 \033[0m""")
 

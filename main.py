@@ -27,14 +27,16 @@ banner()
 print("\033[93minitializing...\033[0m")
 NumberOfThreads = 5
 q = Q()
-with open("4digits.txt") as f:
-    otpList = []
-    for line in f:
-        otpList.append(line[0:4])
-    for otp in range(0,10000):
-        random_otp = random.choice(otpList)
-        q.put(random_otp)
-        otpList.remove(random_otp)
+otpList = []
+
+for num in range(10000):
+    otp = str(num).zfill(4)
+    otpList.append(otp)
+for i in range(10000):
+    random_otp = random.choice(otpList)
+    q.put(random_otp)
+    otpList.remove(random_otp)
+
 print("""\033[93m
 what do you want?
 

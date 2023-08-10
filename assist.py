@@ -46,7 +46,7 @@ class ChangePassword:
         data["ConfirmPassword"]=password
         pass_res = session.post("https://online.udvash-unmesh.com/Account/SetNewPassword",data=data)
         if "CONGRATULATIONS!" in pass_res.text:
-            return "Password was successfully changed!"
+            return "\033[92;1m Password was successfully changed!\033[0m"
         else:
             print(pass_res)
 
@@ -74,6 +74,6 @@ class getRegNumber:
             soup = BeautifulSoup(otp_res.content, 'html.parser')
             h3_tag = soup.find('h3', {'class': 'uu-login-form-sub-title'})
             span_tag = h3_tag.find('span')
-            print(f"\nThe registration number is:{span_tag.text}")
+            print(f"\n \033[92;1m The registration number is:{span_tag.text} \033[0m")
         else:
             pass

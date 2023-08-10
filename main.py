@@ -5,7 +5,7 @@ from concurrent.futures import ThreadPoolExecutor as TPE
 from queue import Queue as Q
 from sys import stdout
 
-print("i\033[93mn itializing...\033[0m")
+print("\033[93m initializing...\033[0m")
 NumberOfThreads = 5
 q = Q()
 with open("4digits.txt") as f:

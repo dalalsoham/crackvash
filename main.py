@@ -26,7 +26,7 @@ what do you want?
 \033[0m""")
 
 def showProgress(done,nowTrying):
-    stdout.write(f"\rNow trying: {nowTrying} | Attack done: {done/100}%")
+    stdout.write(f"\r\033[91;1mNow trying: {nowTrying} | Attack done: {done/100}% \033[0m")
     stdout.flush()
 
 choice = int(input("(1/2): "))

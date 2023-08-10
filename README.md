@@ -33,6 +33,8 @@ Some things I'd like to change are:
 
 ## Installation and Usage
 
+![Screenshot from 2023-08-10 17-55-36](https://github.com/Itsmmdoha/crackvash/assets/70005698/b95e53b6-986c-40e0-a9a6-7b1e7942c509)
+
 You have to install the required modules before running it. Just run the following commands:
 
 - Clone the repository:

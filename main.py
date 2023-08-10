@@ -16,14 +16,14 @@ with open("4digits.txt") as f:
         random_otp = random.choice(otpList)
         q.put(random_otp)
         otpList.remove(random_otp)
-print("""
+print("""\033[93m
 what do you want?
 
-1) Get registration number from Nickname & Phone Number
-                      Or,
-2) Change pasword using Phone Number & Registration number
+1) \033[92m Get registration number from Nickname & Phone Number
+ \033[93m                     Or,
+2) \033[92m Change pasword using Phone Number & Registration number
 
-""")
+\033[0m""")
 
 def showProgress(done,nowTrying):
     stdout.write(f"\rNow trying: {nowTrying} | Attack done: {done/100}% ")

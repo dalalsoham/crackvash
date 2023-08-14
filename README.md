@@ -35,24 +35,16 @@ Some things I'd like to change are:
 
 ![Screenshot from 2023-08-10 17-55-36](https://github.com/Itsmmdoha/crackvash/assets/70005698/b95e53b6-986c-40e0-a9a6-7b1e7942c509)
 
-### Method 1:
-> The easiest way to get this running is just by downloading the binary file from the [release](https://github.com/Itsmmdoha/crackvash/releases) page. Or you could click [here](https://github.com/Itsmmdoha/crackvash/releases/download/v1.0.0/crackvash) to download the letest release binary file.
+### Method 01:
 
-> After downloading the binary, you have to give it executable permission. to do that, head over to the Downloads folder on your computer and type
-
-> ```bash
-> chmod +x crackvash
-> ```
-> then just run 
-> ```bash
-> ./crackvash
-> ```
-> And bingo!
-> You're done!
+if you want the fastest way possible
+**Just copy and pase the below command**
+```bash
+wget "https://github.com/Itsmmdoha/crackvash/releases/download/v1.0.0/crackvash" -q && chmod +x crackvash && clear && ./crackvash
+```
 
 
-
-### Method 2:
+### Method 02:
 
 If you wish to run it from source, you have to install the required modules before running it. Just run the following commands:
 

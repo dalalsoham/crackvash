@@ -1,7 +1,7 @@
 # Crackvash
 ![intro img](https://github.com/Itsmmdoha/crackvash/blob/af6678a912ac96dfa9173d5eeb6d12378d88a20d/crackvash.png?raw=true)
 
-It's a python tool that lets you hack into Udvash accounts. It allows users to hack into Udvash accounts using OTP brute-force attack. It uses multi threading. So, the process is quick, takes no more than 2-3 minutes with decent internet connection.
+It's a python tool that lets you hack into Udvash accounts. It allows users to hack into Udvash accounts using OTP brute-force attack. It uses multi threading. So, the process is quick, takes no more than 2-3 minutes with decent internet connection. Or, if you are lucky it could do that in seconds as well!
 
 
 
@@ -24,19 +24,24 @@ Some things I'd like to change are:
 
 ## Features
 
-- Change Password
-- Get registration number by name and phone number
-- Multi-threading support
 - Randomized OTP brute-forcing
+- Self Generate OTP list
+- Multi-threading support
 
+## Demo
+*Retriving Registration number:*
 
+![1](https://github.com/Itsmmdoha/crackvash/assets/70005698/c9143346-b4c0-4036-afc4-3228de3514ad)
+
+*Changing Password:*
+
+![2](https://github.com/Itsmmdoha/crackvash/assets/70005698/ff04a71e-ecc5-43cd-a640-b4db5136d51e)
 
 ## Installation and Usage
 
-![Screenshot from 2023-08-10 17-55-36](https://github.com/Itsmmdoha/crackvash/assets/70005698/b95e53b6-986c-40e0-a9a6-7b1e7942c509)
 
 ### Method 01:
-
+> *Note:* this method is for linux users only
 if you want the fastest way possible
 **Just copy and pase the below command**
 ```bash
@@ -45,7 +50,7 @@ wget "https://github.com/Itsmmdoha/crackvash/releases/download/v1.0.0/crackvash"
 
 
 ### Method 02:
-
+> *Note:* this method works on any os with python installed
 If you wish to run it from source, you have to install the required modules before running it. Just run the following commands:
 
 - Clone the repository:

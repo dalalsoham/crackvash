@@ -11,23 +11,6 @@ This is a POC (Proof Of Concept) script. I found the vulnerability, and I made a
 
 
 
-## Contributing
-
-Contributions are always welcome!
-
-If you want to customize this code, just do it.
-Some things I'd like to change are:
-1. Build a better Command Line Interface.
-2. Verify the credentials provided by the user before starting an attack.
-
-
-
-## Features
-
-- Randomized OTP brute-forcing
-- Self Generate OTP list
-- Multi-threading support
-
 ## Demo
 *Retriving Registration number:*
 
@@ -35,13 +18,20 @@ Some things I'd like to change are:
 
 *Changing Password:*
 
-![2](https://github.com/Itsmmdoha/crackvash/assets/70005698/ff04a71e-ecc5-43cd-a640-b4db5136d51e)
+![2](https://github.com/Itsmmdoha/crackvash/assets/70005698/e85f85d0-9395-41b5-a1f2-53acdb578e31)
+
+## Features
+
+- Randomized OTP brute-forcing
+- Self Generate OTP list
+- Multi-threading support
 
 ## Installation and Usage
 
 
 ### Method 01:
 > *Note:* this method is for linux users only
+
 if you want the fastest way possible
 **Just copy and pase the below command**
 ```bash
@@ -51,6 +41,7 @@ wget "https://github.com/Itsmmdoha/crackvash/releases/download/v1.0.0/crackvash"
 
 ### Method 02:
 > *Note:* this method works on any os with python installed
+
 If you wish to run it from source, you have to install the required modules before running it. Just run the following commands:
 
 - Clone the repository:
@@ -73,13 +64,19 @@ If you wish to run it from source, you have to install the required modules befo
 ```
 - Then, just follow the onscreen instructions.
 
-    
+## Contributing
+contributions are always welcome! Below is a list of things I would like to add as a features:
+1. verify the credentials before starting an attack
+2. build a better cli-UI
+   
 ## How does it work?
 
 The web portal sends a 4-digit OTP to the user; this tool cracks it by trying all 10 thousand combinations.
 It first loads all the combinations from the 4digits.txt file and randomizes it. After that, it loads all the combinations into a queue so that multi-threading can be used. Then, it just tries all of them until one is matched.
 
 The brute-force can take 20 seconds if you are lucky or can also extend up to 2-3 minutes. But if you have a fast internet connection, I promise it won't take much longer than that.
+
+
 
 ## 🚀 About Me
 I'm an enthusiast.
